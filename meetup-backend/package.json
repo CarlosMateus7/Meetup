@@ -10,10 +10,12 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
+    "express": "^4.15.2",
     "node-latest-version": "^1.0.16"
   },
   "devDependencies": {
     "babel-register": "^6.24.1",
-    "eslint-config-equimper": "^1.6.2"
+    "eslint-config-equimper": "^1.6.2",
+    "nodemon": "^1.11.0"
   }
 }

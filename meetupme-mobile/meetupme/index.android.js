@@ -1,56 +1,50 @@
+import Colors from './constants/Colors';
+import { HomeScreen } from './src/screens';
 import React, { Component } from 'react';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { cashedFonts } from './helpers';
+
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  ActivityIndicator
+  AppRegistry
 } from 'react-native';
 
-import { fetchMeetups } from './constants/api';
+EStyleSheet.build(Colors);
 
-export default class meetupme extends Component {
-static defaultProps = {
-  fetchMeetups
-}
+class meetupme extends React.Component {
+  state = {
+    fontLoaded: false
+  }
 
-state = {
-  loading: false,
-  meetups: []
-}
+  componentDiMount(){
+    this._loadAssetsAsync();
+  }
 
-async componentDiMount(){
-  this.setState({ loading: true });
-  const data = await this.props.fetchMeetups();
-  setTimeout(() => this.setState({ loading: false, meetups: data.meetups }),2000);
-}
+  async _loadAssetsAsync(){
+    const fontAssets = cashedFonts([
+      {
+        montserrat: require('./assets/fonts/MontSerrat-Regular.ttf')
+      },
+      {
+        montserrat: require('./assets/fonts/MontSerrat-Bold.ttf')
+      },
+      {
+        montserrat: require('./assets/fonts/MontSerrat-Light.ttf')
+      },
+      {
+        montserrat: require('./assets/fonts/MontSerrat-Medium.ttf')
+      }
+    ]);
 
+    await Promise.all(fontAssets);
+
+    this.setState ({ fontLoaded: true});
+  }
   render() {
-    if(this.state.loading){
-      return (
-        <View style={styles.container}>
-          <ActivityIndicator size="large" />
-        </View>
-      )
+    if (!this.state.fontLoaded) {
+      return <Component.AppLoading />
     }
-    return (
-      <View style={styles.container}>
-        <Text>Meetup</Text>
-         {this.state.meetups.map((meetup,i) => (
-           <Text key = {i}>{meetup.title}</Text>
-         ))}   
-      </View>
-    );
+    return <HomeScreen />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  }
-});
 
 AppRegistry.registerComponent('meetupme', () => meetupme);
