@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Expo, { AppLoading } from 'expo';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Colors from './constants/Colors';
-import { HomeScreen } from './src/screens';
 import { fontAssets } from './helpers';
+import Root from './src/Root';
 
 EStyleSheet.build(Colors);
 
@@ -24,9 +24,9 @@ class meetupme extends React.Component {
 
   render() {
     if (!this.state.fontLoaded) {
-      return <Components.AppLoading />;
+      //return <AppLoading />;
     }
-    return <HomeScreen />;
+    return <Root />;
   }
 }
 

@@ -12,7 +12,7 @@ const styles = EStyleSheet.create ({
   title:{
 color : '$whiteColor',
 fontSize: 25,
-fontFamily: 'montserrat'
+//fontFamily: 'montserrat'
   },
   contentContainer: {
     flex: 1
@@ -21,14 +21,14 @@ fontFamily: 'montserrat'
     height: 200,
     width:175,
     marginHorizontal: '1.5%',
-    backgroundColor: '#f73859'
+    backgroundColor: '$redColor'
   },
   meetupCardTopContainer: {
     flex:1,
     position: 'relative'
   },
   meetupCardTitle: {
-    fontFamily: 'montserratBold',
+    //fontFamily: 'montserratBold',
     position: 'absolute',
     color: '$whiteColor',
     top: '2%',
@@ -42,11 +42,11 @@ fontFamily: 'montserrat'
   },
   meetupCardMetaName: {
     fontSize: 15,
-    fontFamily: 'montserrat'
+    //fontFamily: 'montserrat'
   },
   meetupCardMetaDate: {
     fontSize: 13,
-    fontFamily: 'montserratLight'
+    //fontFamily: 'montserratLight'
   }
 });
 
