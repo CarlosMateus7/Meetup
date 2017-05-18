@@ -10,9 +10,10 @@ class MeetupApi {
     this.path = `/groups/${this.groupId}/meetups`;
   }
 
-  async fetchGroupMeetups() {    
-      const { data } = await axios.get(this.path);
-      return data.meetups;
+  async fetchGroupMeetups() {
+    const { data } = await axios.get(this.path);
+
+    return data.meetups;
   }
 }
 

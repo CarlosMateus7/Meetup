@@ -24,7 +24,7 @@ class meetupme extends React.Component {
 
   render() {
     if (!this.state.fontLoaded) {
-      //return <AppLoading />;
+      return <Components.AppLoading />;
     }
     return <HomeScreen />;
   }

@@ -18,7 +18,7 @@ class HomeScreen extends Component {
    }
 
    async componentDiMount() {
-     this.state({ loading: true });
+     this.setState({ loading: true });
      const meetups = await this.props.meetupApi.fetchGroupMeetups();
      this.setState({ loading: false, meetups });
    }

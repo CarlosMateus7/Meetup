@@ -10,11 +10,9 @@ const styles = EStyleSheet.create ({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-
   },
   bottomContainer:{
     flex: 0.8,
-
   }
 });
 

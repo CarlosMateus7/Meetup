@@ -9,15 +9,10 @@ const styles = EStyleSheet.create ({
     paddingHorizontal: '2.5%',
     paddingVertical: '2.5%'
   },
-
-  titleContainer: {
-    flex: 0.1,
-    paddingHorizontal: '2.5%',
-    paddingVertical: '2.5%'
-  },
   title:{
 color : '$whiteColor',
-fontSize: 25
+fontSize: 25,
+fontFamily: 'montserrat'
   },
   contentContainer: {
     flex: 1
@@ -33,6 +28,7 @@ fontSize: 25
     position: 'relative'
   },
   meetupCardTitle: {
+    fontFamily: 'montserratBold',
     position: 'absolute',
     color: '$whiteColor',
     top: '2%',
@@ -45,10 +41,12 @@ fontSize: 25
     paddingHorizontal: '2.5%'
   },
   meetupCardMetaName: {
-    fontSize: 15
+    fontSize: 15,
+    fontFamily: 'montserrat'
   },
   meetupCardMetaDate: {
-    fontSize: 13
+    fontSize: 13,
+    fontFamily: 'montserratLight'
   }
 });
 
