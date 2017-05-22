@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Expo, { AppLoading } from 'expo';
+import { Provider } from 'react-redux';
 import EStyleSheet from 'react-native-extended-stylesheet';
+
+import Root from './src/Root';
+
 import Colors from './constants/Colors';
 import { fontAssets } from './helpers';
-import Root from './src/Root';
+import store from './src/redux/store';
+
 
 EStyleSheet.build(Colors);
 
@@ -26,7 +31,11 @@ class meetupme extends React.Component {
     if (!this.state.fontLoaded) {
       //return <AppLoading />;
     }
-    return <Root />;
+    return (
+      <Provider store = {store}>  
+        <Root />
+      </Provider>
+    );
   }
 }
 
